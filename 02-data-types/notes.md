@@ -27,3 +27,4 @@ arrayName.pop() //removes last element
 arrayName.push() // add to the array
 arrayName.shift() //removes first element
 
+

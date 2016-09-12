@@ -52,6 +52,6 @@ var y1 = parseInt(corr1[1])
 var x2 = parseInt(corr2[0])
 var y2 = parseInt(corr2[1])
 
-d = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2)
+d = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2))
 console.log(d)
 
