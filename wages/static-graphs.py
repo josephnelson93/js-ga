@@ -42,7 +42,14 @@ plt.scatter(weekly_hrs, income)
 plt.style.use('fivethirtyeight')
 plt.xlabel('Weekly Hours')
 plt.ylabel('Real Income')
-plt.savefig('demo_plot')
+plt.savefig("demo_plot.png",bbox_inches='tight')
+
+# add a line
+plt.plot(weekly_hrs, income, 'b--')
+plt.style.use('fivethirtyeight')
+plt.xlabel('Weekly Hours')
+plt.ylabel('Real Income')
+plt.savefig("demo_plot_line.png",bbox_inches='tight')
 
 
 # other attempts
