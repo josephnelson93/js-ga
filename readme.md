@@ -1,6 +1,6 @@
 # ![Logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) JavaScript at General Assembly
 
-This repository documents projects and work I complete outside of [General Assembly's 10 week JavaScript class](https://generalassemb.ly/education/javascript-development). All of the in-class work (including associated homework, exercises, and readings) is in a private repository that is forked from the curriculum.
+This repository documents projects and work I complete as a student outside of [General Assembly's 10 week JavaScript class](https://generalassemb.ly/education/javascript-development). All of the in-class work (including associated homework, exercises, and readings) is in a private repository that is forked from the curriculum.
 
 
 ## Wages Repo
