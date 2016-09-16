@@ -37,16 +37,15 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 plt.rcParams['figure.figsize'] = (8, 6)
 plt.rcParams['font.size'] = 14
+plt.style.use('fivethirtyeight')    # always FiveThirtyEight
 
 plt.scatter(weekly_hrs, income)
-plt.style.use('fivethirtyeight')
 plt.xlabel('Weekly Hours')
 plt.ylabel('Real Income')
 plt.savefig("demo_plot.png",bbox_inches='tight')
 
 # add a line
 plt.plot(weekly_hrs, income, 'b--')
-plt.style.use('fivethirtyeight')
 plt.xlabel('Weekly Hours')
 plt.ylabel('Real Income')
 plt.savefig("demo_plot_line.png",bbox_inches='tight')
