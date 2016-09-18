@@ -43,13 +43,13 @@ plt.style.use('fivethirtyeight')    # always FiveThirtyEight
 plt.scatter(weekly_hrs, income)
 plt.xlabel('Weekly Hours')
 plt.ylabel('Real Income')
-plt.savefig("demo_plot.png",bbox_inches='tight')
+# plt.savefig("demo_plot.png",bbox_inches='tight')
 
 # add a line
 plt.plot(weekly_hrs, income, 'b--')
 plt.xlabel('Weekly Hours')
 plt.ylabel('Real Income')
-plt.savefig("demo_plot_line.png",bbox_inches='tight')
+# plt.savefig("demo_plot_line.png",bbox_inches='tight')
 
 # this graphs look wonky. Next steps: double check the realWages and realIncome methods :(
 
@@ -57,7 +57,6 @@ plt.savefig("demo_plot_line.png",bbox_inches='tight')
 print realWage(40000,30)
 
 print realIncome(40000,20)
-
 
 print 52*39*realWage(40000,39)
 
