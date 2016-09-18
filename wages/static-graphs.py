@@ -22,6 +22,7 @@ def realIncome(salary, hours):
         wage = realWage(salary, hours)
         return wage*40*52 + wage*1.5*(hours-40)*52
 
+# for a given salary, find the actual dollar amount via realWages, and calculate the salary using that amount
 def incomes(salary, hr_amounts, income):
     for x in hr_amounts:
         income.append(realIncome(salary, x))
@@ -50,8 +51,9 @@ plt.xlabel('Weekly Hours')
 plt.ylabel('Real Income')
 plt.savefig("demo_plot_line.png",bbox_inches='tight')
 
+# this graphs look wonky. Next steps: double check the realWages and realIncome methods :(
 
-# other attempts
+# testing methods
 print realWage(40000,30)
 
 print realIncome(40000,20)
