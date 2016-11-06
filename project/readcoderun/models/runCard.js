@@ -1,13 +1,12 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var runCardScheme = new Schema({
-  cardType: "Run",
+var runCardSchema = new Schema({
   date: Date,
-  distance: String,
+  distance: Number,
   timeSpent: Date,
   //pace provided by MapMyRun in x.yz/mi
-  pace: float,
+  pace: Number,
 })
 
 var runCard = mongoose.model( 'runCard', runCardSchema )

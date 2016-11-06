@@ -2,10 +2,9 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var readCardSchema = new Schema({
-  cardType: "Read",
   date: Date,
-  startPage: int,
-  endPage: int,
+  startPage: Number,
+  endPage: Number,
   bookTitle: String,
   timeSpent: Date,
 })

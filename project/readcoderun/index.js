@@ -15,21 +15,24 @@ var runCard = require('./models/runCard')
 var app = express()
 
 // Registering and using our template engine
-// app.engine('handlebars', hbs({defaultLayout: 'main'}))
-// app.set('view engine', 'handlebars')
+app.engine('handlebars', hbs({defaultLayout: 'default'}))
+app.set('view engine', 'handlebars')
 
 // Serving static files (like css)
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
 // Use Body Parser
 app.use(bodyParser.urlencoded({extended: true}))
 
+
+
 // Routes
 app.get('/', function( req , res ) {
 
-    res.send('This is cool')
+    res.render('index')
 
 })
+
 
 app.listen( 3000, function() {
 

@@ -2,11 +2,10 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var codeCardSchema = new Schema({
-  cardType: "Code",
   //provided by Github:
-  eventId: String,
+  eventId: Number,
   date: Date,
-  commits: String,
+  commits: Number,
   project: Array,
 })
 
