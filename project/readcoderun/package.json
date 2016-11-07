@@ -16,6 +16,9 @@
     "mongoose": "^4.6.5",
     "nvd3": "^1.7.1"
   },
+    "engines": {
+    "node": "0.12.5"
+  },
   "devDependencies": {
     "nodemon": "^1.11.0"
   }
