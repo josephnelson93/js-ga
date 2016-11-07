@@ -29,47 +29,68 @@ app.use(bodyParser.urlencoded({extended: true}))
 // Routes
 app.get('/', function( req , res ) {
 
-	CodeCard.find({}, function( req, codeCard){
+//Surely, there is a better way than nesting these find statements?
+// 	CodeCard.find({}, function( req, codeCard){
+// 		RunCard.find({}, function(req, runCard){
+// 		 res.render('index', { codeCard: codeCard, 
+// 		 	runCard: runCard, })
+// 		})
+// 	})
+// })
 
-    	res.render('index', { card: codeCard })
+	// ReadCard.find({}, function( req, readCard){
+	// 	res.render('index', { readCard: readCard })
+
+	// })
+
+	ReadCard.find({}, function( req, readCard){
+		CodeCard.find({}, function(req, codeCard){
+			RunCard.find({}, function(req, runCard){
+		 		res.render('index', { readCard: readCard, codeCard: codeCard, runCard: runCard, })
+			})
+		})
 	})
 
+
 })
+
 
 /*
-Run card routes
+Read card routes
 
+*/
+app.get('/readCards/new', function( req , res ) {
 
-app.get('/runCards/new', function( req , res ) {
-
-  res.render('runCards/new')
+  res.render('readCards/new')
 
 })
 
-app.post('/codeCard', function( req , res ) {
+app.post('/readCard', function( req , res ) {
 
-  var newCodeCard = new CodeCard({
+  var newReadCard = new ReadCard({
     date: req.body.date,
-    commits: req.body.commits,
-    project: req.body.project,
+    startPage: req.body.startPage,
+    endPage: req.body.endPage,
+    bookTitle: req.body.bookTitle,
+    timeSpent: req.body.timeSpent,
+    pagesRead: req.body.endPage-req.body.startPage,
   })
 
-  newCodeCard.save()
+  newReadCard.save()
 
   res.redirect('/')
 
 })
 
-app.get('/codeCard/:id', function( req, res ) {
+app.get('/readCard/:id', function( req, res ) {
 
-  CodeCard.findById( req.params.id, function( err, codeCard ){
+  ReadCard.findById( req.params.id, function( err, readCard ){
 
-    res.render( 'codeCards/codeCard', { codeCard: codeCard } )
+    res.render( 'readCards/readCard', { readCard: readCard } )
 
   })
 
 })
-*/
 
 
 /*
@@ -107,6 +128,40 @@ app.get('/codeCard/:id', function( req, res ) {
 })
 
 
+/*
+Run card routes
+*/
+
+app.get('/runCards/new', function( req , res ) {
+
+  res.render('runCards/new')
+
+})
+
+app.post('/runCard', function( req , res ) {
+
+  var newRunCard = new RunCard({
+    date: req.body.date,
+    distance: req.body.distance,
+    timeSpent: req.body.timeSpent,
+    pace: req.body.pace,
+  })
+
+  newRunCard.save()
+
+  res.redirect('/')
+
+})
+
+app.get('/runCard/:id', function( req, res ) {
+
+  RunCard.findById( req.params.id, function( err, runCard ){
+
+    res.render( 'runCards/runCard', { runCard: runCard } )
+
+  })
+
+})
 
 
 

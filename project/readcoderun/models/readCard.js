@@ -6,7 +6,8 @@ var readCardSchema = new Schema({
   startPage: Number,
   endPage: Number,
   bookTitle: String,
-  timeSpent: Date,
+  timeSpent: Number,
+  pagesRead: Number,
 })
 
 var ReadCard = mongoose.model( 'ReadCard', readCardSchema )

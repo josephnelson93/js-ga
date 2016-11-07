@@ -1,17 +1,17 @@
 <div class="container">
     <div class="column">
-      {{#each card}}
+      {{#each readCard}}
+      {{> readCard }}
+      {{/each}}
+    </div>
+    <div class="column">
+      {{#each codeCard}}
       {{> codeCard }}
       {{/each}}
     </div>
     <div class="column">
-      {{#each card}}
-      {{> codeCard }}
-      {{/each}}
-    </div>
-    <div class="column">
-    {{#each card}}
-    {{> codeCard }}
+    {{#each runCard}}
+    {{> runCard }}
     {{/each}}
     </div>
 </div>

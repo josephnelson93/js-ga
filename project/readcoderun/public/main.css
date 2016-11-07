@@ -274,8 +274,10 @@ html, body {
 
 */
 
+
 .c-footer {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  bottom: 0;
 }

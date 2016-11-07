@@ -4,7 +4,7 @@ var Schema = mongoose.Schema
 var runCardSchema = new Schema({
   date: Date,
   distance: Number,
-  timeSpent: Date,
+  timeSpent: Number,
   //pace provided by MapMyRun in x.yz/mi
   pace: Number,
 })
