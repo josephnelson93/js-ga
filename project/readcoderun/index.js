@@ -87,6 +87,7 @@ app.get('/codeCards/new', function( req , res ) {
 
   res.render('codeCards/new')
 
+  //To add:
   //https://api.github.com/users/josephofiowa/events/public
 
 
