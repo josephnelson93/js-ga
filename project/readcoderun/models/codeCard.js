@@ -9,6 +9,6 @@ var codeCardSchema = new Schema({
   project: Array,
 })
 
-var codeCard = mongoose.model( 'codeCard', codeCardSchema )
+var CodeCard = mongoose.model( 'CodeCard', codeCardSchema )
 
-module.exports = codeCard
+module.exports = CodeCard

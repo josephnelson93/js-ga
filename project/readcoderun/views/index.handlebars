@@ -1,9 +1,17 @@
-<header class="c-content__header">
-  <h2 class="c-heading"> Cards: </h2>
-</header>
-
-
-<!-- Cards List will go here -->
-{{#each artists}}
-  {{> artist}}
-{{/each}}
+<div class="container">
+    <div class="column">
+      {{#each card}}
+      {{> codeCard }}
+      {{/each}}
+    </div>
+    <div class="column">
+      {{#each card}}
+      {{> codeCard }}
+      {{/each}}
+    </div>
+    <div class="column">
+    {{#each card}}
+    {{> codeCard }}
+    {{/each}}
+    </div>
+</div>

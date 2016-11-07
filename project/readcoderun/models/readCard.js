@@ -9,6 +9,6 @@ var readCardSchema = new Schema({
   timeSpent: Date,
 })
 
-var readCard = mongoose.model( 'readCard', readCardSchema )
+var ReadCard = mongoose.model( 'ReadCard', readCardSchema )
 
-module.exports = readCard
+module.exports = ReadCard

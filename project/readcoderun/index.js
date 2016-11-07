@@ -7,9 +7,9 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/')
 
 // Include Models
-var codeCard = require('./models/codeCard')
-var readCard = require('./models/readCard')
-var runCard = require('./models/runCard')
+var CodeCard = require('./models/codeCard')
+var ReadCard = require('./models/readCard')
+var RunCard = require('./models/runCard')
 
 // Creating our Application
 var app = express()
@@ -29,9 +29,86 @@ app.use(bodyParser.urlencoded({extended: true}))
 // Routes
 app.get('/', function( req , res ) {
 
-    res.render('index')
+	CodeCard.find({}, function( req, codeCard){
+
+    	res.render('index', { card: codeCard })
+	})
 
 })
+
+/*
+Run card routes
+
+
+app.get('/runCards/new', function( req , res ) {
+
+  res.render('runCards/new')
+
+})
+
+app.post('/codeCard', function( req , res ) {
+
+  var newCodeCard = new CodeCard({
+    date: req.body.date,
+    commits: req.body.commits,
+    project: req.body.project,
+  })
+
+  newCodeCard.save()
+
+  res.redirect('/')
+
+})
+
+app.get('/codeCard/:id', function( req, res ) {
+
+  CodeCard.findById( req.params.id, function( err, codeCard ){
+
+    res.render( 'codeCards/codeCard', { codeCard: codeCard } )
+
+  })
+
+})
+*/
+
+
+/*
+Code card routes
+
+*/
+app.get('/codeCards/new', function( req , res ) {
+
+  res.render('codeCards/new')
+
+})
+
+app.post('/codeCard', function( req , res ) {
+
+  var newCodeCard = new CodeCard({
+    date: req.body.date,
+    commits: req.body.commits,
+    project: req.body.project,
+  })
+
+  newCodeCard.save()
+
+  res.redirect('/')
+
+})
+
+app.get('/codeCard/:id', function( req, res ) {
+
+  CodeCard.findById( req.params.id, function( err, codeCard ){
+
+    res.render( 'codeCards/codeCard', { codeCard: codeCard } )
+
+  })
+
+})
+
+
+
+
 
 
 app.listen( 3000, function() {

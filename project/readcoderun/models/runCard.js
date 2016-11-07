@@ -9,6 +9,6 @@ var runCardSchema = new Schema({
   pace: Number,
 })
 
-var runCard = mongoose.model( 'runCard', runCardSchema )
+var RunCard = mongoose.model( 'RunCard', runCardSchema )
 
-module.exports = runCard
+module.exports = RunCard
