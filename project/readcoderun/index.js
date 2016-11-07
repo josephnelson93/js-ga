@@ -30,19 +30,6 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.get('/', function( req , res ) {
 
 //Surely, there is a better way than nesting these find statements?
-// 	CodeCard.find({}, function( req, codeCard){
-// 		RunCard.find({}, function(req, runCard){
-// 		 res.render('index', { codeCard: codeCard, 
-// 		 	runCard: runCard, })
-// 		})
-// 	})
-// })
-
-	// ReadCard.find({}, function( req, readCard){
-	// 	res.render('index', { readCard: readCard })
-
-	// })
-
 	ReadCard.find({}, function( req, readCard){
 		CodeCard.find({}, function(req, codeCard){
 			RunCard.find({}, function(req, runCard){
@@ -53,7 +40,6 @@ app.get('/', function( req , res ) {
 
 
 })
-
 
 /*
 Read card routes
@@ -100,6 +86,9 @@ Code card routes
 app.get('/codeCards/new', function( req , res ) {
 
   res.render('codeCards/new')
+
+  //https://api.github.com/users/josephofiowa/events/public
+
 
 })
 
